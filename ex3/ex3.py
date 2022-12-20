@@ -1,7 +1,7 @@
 
 # Задание 3
 
-def encrypt(text: str, key: str):
+def encrypt(text: str, key: str) -> str:
     encrypted_text = ''
     for i in range(len(text)):
         a = ord(text[i])
