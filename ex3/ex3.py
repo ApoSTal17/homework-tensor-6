@@ -2,6 +2,14 @@
 # Задание 3
 
 def encrypt(text: str, key: str) -> str:
+    """Функция шифрования и расшифрования текста по ключу-гамме
+
+    args:
+        text - открытый или закрытый текст в виде строки
+        key - ключ-гамма в виде строки
+    returns:
+        Зашифрованный или расшифрованный текст в виде строки
+    """
     encrypted_text = ''
     for i in range(len(text)):
         a = ord(text[i])
@@ -23,7 +31,8 @@ while True:
     s = input(message)
     match s:
         case '1':
-            with open("ex3/open_text.txt", "r", encoding='utf-8') as open_file, open("ex3/encrypted_text.txt", "w", encoding='utf-8') as encrypted_file:
+            with open("ex3/open_text.txt", "r", encoding='utf-8') as open_file, \
+                 open("ex3/encrypted_text.txt", "w", encoding='utf-8') as encrypted_file:
                 key = input('Введите ключ-строку (гамму) (желательно на английском): ')
                 open_text = open_file.read()
                 encrypted_text = encrypt(open_text, key)
@@ -31,7 +40,8 @@ while True:
                 print('Результат шифрования помещен в encrypted_text.txt')
 
         case '2':
-            with open("ex3/encrypted_text.txt", "r", encoding='utf-8') as encrypted_file, open("ex3/decrypted_text.txt", "w", encoding='utf-8') as decrypted_file:
+            with open("ex3/encrypted_text.txt", "r", encoding='utf-8') as encrypted_file, \
+                 open("ex3/decrypted_text.txt", "w", encoding='utf-8') as decrypted_file:
                 key = input('Введите ключ-строку (гамму) (желательно на английском): ')
                 encrypted_text = encrypted_file.read()
                 decrypted_text = encrypt(encrypted_text, key)

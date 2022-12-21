@@ -4,16 +4,24 @@
 import ast
 
 def code_byte(str_list):
-    '''
-    Выполняет кодирование списка строк в список байт-кодов
-    '''
+    """Выполняет кодирование списка строк в список байт-кодов
+
+    args:
+        str_list - список строк
+    returns:
+        список байт кодов строк
+    """
     byte_list = [i.encode('utf-8') for i in str_list]
     return byte_list
 
 def decode_byte(byte_list):
-    '''
-    Выполняет декодирование списка байт-кодов в список строк
-    '''
+    """Выполняет декодирование списка байт-кодов в список строк
+
+    args:
+        byte_list - список байт-кодов
+    returns:
+        список строк из списка байт-кодов
+    """
     str_list = [i.decode('utf-8') for i in byte_list]
     return str_list
 
